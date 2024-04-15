@@ -191,3 +191,11 @@
         sysctl --system
 
 #---------------------------------------------------------------------------
+#V-257798 - RHEL 9 Must prevent kernel profiling by nonprivileged users
+
+    - name: Run sysctl_d_harden.py to add kernel.perf_event_paranoid=2
+      shell: |
+        python /root/sysctl_d_harden.py kernel.perf_event_paranoid=2
+        sysctl --system
+
+#---------------------------------------------------------------------------
