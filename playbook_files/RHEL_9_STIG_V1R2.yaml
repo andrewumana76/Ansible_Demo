@@ -254,4 +254,12 @@
         bash /root/modprobe_modules.sh atm
 
 
+#--------------------------------------------------------------------------
+#V-257805 - RHEL 9 must be configured to disable the Controller Area Network kernel module
+
+    - name: Run modprobe_modules.sh to harden can
+      shell: |
+        bash /root/modprobe_modules.sh can
+
+
 #---------------------------------------------------------------------------
