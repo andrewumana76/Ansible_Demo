@@ -255,10 +255,17 @@
 
 
 #--------------------------------------------------------------------------
-#V-257805 - RHEL 9 must be configured to disable the Controller Area Network kernel module
+#V-257805 - RHEL 9 Must be configured to disable the Controller Area Network kernel module
 
     - name: Run modprobe_modules.sh to harden can
       shell: |
         bash /root/modprobe_modules.sh can false
+
+#---------------------------------------------------------------------------
+#V-257806 - RHEL 9 Must be configuration to disable the FireWire kernel module    
+    
+    - name: Run modprobe_modules.sh to harden firewire-core
+      shell: |
+        bash /root/modprobe_modules.sh firewire-core true
 
 #---------------------------------------------------------------------------
