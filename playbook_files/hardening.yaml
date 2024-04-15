@@ -1,0 +1,45 @@
+- name: Hardening_Playbook
+  hosts: myhosts
+  tasks:
+#---------------------------------------------------------------------------- 
+#V-257779
+#This is not a DoD system, only for example
+
+    - name: RHEL9 must display DoD Notice
+      copy:
+        src: ../source_files/dod_banner_example.txt
+        dest: /etc/issue
+        owner: root
+        group: root
+        mode: 0644
+
+#---------------------------------------------------------------------------- 
+#V-257781
+
+    - name: Graphical display manager must not be the default target on RHEL9
+      ansible.builtin.command: 
+        cmd: systemctl set-default multi-user.target
+
+#---------------------------------------------------------------------------- 
+#V-257782 - RHEL 9 must enable the hardware random number generator entropy gatherer service
+
+    - name: Install rng-tools
+      dnf:
+        name:
+          - rng-tools
+        state: latest
+
+    - name: Enable rng-tools
+      shell: |
+        systemctl enable --now rngd  
+        systemctl start rngd
+    
+#---------------------------------------------------------------------------- 
+#V-257783 - RHEL 9 systemd-journald service must be enabled
+      
+    - name: Enable systemd-journald
+      shell: |
+        systemctl enable --now systemd-journald
+        systemctl start systemd-journald
+
+#---------------------------------------------------------------------------- 
