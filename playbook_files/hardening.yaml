@@ -108,4 +108,15 @@
         line: 'export superusers'
         backrefs: yes
 
+    - name: Update Grubby
+      ansible.builtin.command:
+        cmd: grubby --update-kernel=ALL
+
+#---------------------------------------------------------------------------
+#V-257790 - RHEL 9 /boot/grub2/grub.cfg file must be group owned by root
+
+    - name: Set root as owner as grub.cfg
+      ansible.builtin.command:
+        cmd: chgrp root /boot/grub2/grub.cfg
+
 #---------------------------------------------------------------------------
