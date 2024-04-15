@@ -175,3 +175,19 @@
         python /root/grubby_harden.py audit=1
 
 #---------------------------------------------------------------------------
+#V-257797 - RHEL 9 Must restrict access to the kernel message buffer    
+
+    - name: Copy sysctl.d script locally
+      copy:
+        src: ../source_files/sysctl_d_harden.py
+        dest: /root
+        owner: root
+        group: root
+        mode: 0700
+
+    - name: Run sysctl_d_harden.py to add kernel.dmesg_restrict=1
+      shell: |
+        python /root/sysctl_d_harden.py kernel.dmesg_restrict=1
+        sysctl --system
+
+#---------------------------------------------------------------------------
