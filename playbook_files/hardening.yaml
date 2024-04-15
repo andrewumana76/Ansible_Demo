@@ -55,25 +55,19 @@
 #---------------------------------------------------------------------------- 
 #V-257785 - The x86 Ctrl-ALt-Delete key sequence must be disabled on RHEL 9
 
-    - name: Disabled ctrl-alt-delete.target
-      ansible.builtin.command:
-        cmd: systemctl disable --now ctrl-alt-del.target
-
-    - name: Mask ctrl-alt-delete.target
-      ansible.builtin.command:
-        cmd: systemctl mask --now ctrl-alt-del.target
+    - name: Disable and mask ctrl-alt-delete.tart
+      shell: |
+        systemctl disable --now ctrl-alt-del.target
+        systemctl mask --now ctrl-alt-del.target
 
 #---------------------------------------------------------------------------- 
 #V-257786 - RHEL 9 debug-shell systemd service must be disabled
 
-    - name: Disabled debug-shell.service
-      ansible.builtin.command:
-        cmd: systemctl disable --now debug-shell.service
-
-    - name: Mask debug-shell.service
-      ansible.builtin.command:
-        cmd: systemctl mask --now debug-shell.service
-
+    - name: Disable and mask debug-shell.service
+      shell: |
+        systemctl disable --now debug-shell.service
+        systemctl mask --now debug-shell.service
+    
 #----------------------------------------------------------------------------
 #V-257787 - RHEL 9 must require a boot loader superuser password
 #This needs arguments to set and confirm password
