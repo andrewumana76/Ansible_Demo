@@ -138,16 +138,24 @@
         mode: 0700
 
     - name: Run grubby_harden.py to add vsyscall=none
-      ansible.builtin.command: 
-        cmd: python /root/grubby_harden.py vsyscall=none
+      shell: |
+        grubby --update-kernel=ALL --args="vsyscall=none"
+        python /root/grubby_harden.py vsyscall=none
 
 #---------------------------------------------------------------------------
 #V-257793 - RHEL 9 Must clear the page allocator to prevent use-after-free attacks
 
     - name: Run grubby_harden.py to add page_poison=1
-      ansible.builtin.command: 
-        cmd: python /root/grubby_harden.py page_poison=1
+      shell: |
+        grubby --update-kernel=ALL --args="page_poison=1"
+        python /root/grubby_harden.py page_poison=1
 
 #---------------------------------------------------------------------------
+#V-257794 - RHEL 9 Must clear SLUB/SLAB Objects to prevent use-after-free attacks
 
+    - name: Run grubby_harden.py to add slub_debug=P
+      shell: |
+        grubby --update-kernel=ALL --args="slub_debug=P"
+        python /root/grubby_harden.py slub_debug=P
 
+#---------------------------------------------------------------------------
