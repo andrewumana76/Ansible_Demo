@@ -1,4 +1,4 @@
-- name: Hardening_Playbook
+- name: RHEL9_STIG_V1R2
   hosts: myhosts
   tasks:
 #---------------------------------------------------------------------------- 
