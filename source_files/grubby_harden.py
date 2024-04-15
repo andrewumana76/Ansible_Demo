@@ -1,10 +1,7 @@
-# Authored by: Andrew Umana
-# This file is used to insert a string for grub kernel parameter hardening
-
 import sys
 
 #read /etc/default/grub
-grubby_cmd_line = open("grub", "r+")
+grubby_cmd_line = open("/etc/default/grub", "r+")
 
 #prime the first line for reading
 line = grubby_cmd_line.readline()

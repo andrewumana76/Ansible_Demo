@@ -127,3 +127,18 @@
         cmd: chown root /boot/grub2/grub.cfg
 
 #---------------------------------------------------------------------------
+#V-257792 - RHEL 9 Must disable virtual system calls
+
+    - name: Copy Grubby script locally
+      copy:
+        src: ../source_files/grubby_harden.py
+        dest: /root
+        owner: root
+        group: root
+        mode: 0644
+
+    - name: Run grubby_harden.py to add vsyscall=none
+      ansible.builtin.command: 
+        cmd: python /root/grubby_harden.py vsyscall=none
+
+#---------------------------------------------------------------------------
