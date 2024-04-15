@@ -159,11 +159,19 @@
         python /root/grubby_harden.py slub_debug=P
 
 #---------------------------------------------------------------------------
-#V-257795 - Verify RHEL 9 enables kernel page-table isolation
+#V-257795 - RHEL 9 Must enable mitigations against processor-based vulnerabilities
     
     - name: Run grubby_harden.py to add pti=on
       shell: |
         grubby --update-kernel=ALL --args="pti=on"
         python /root/grubby_harden.py pti=on
+
+#---------------------------------------------------------------------------
+#V-257796 - RHEL 9 Must enable auditing of processes that start prior to the audit daemon    
+
+    - name: Run grubby_harden.py to add audit=1
+      shell: |
+        grubby --update-kernel=ALL --args="audit=1"
+        python /root/grubby_harden.py audit=1
 
 #---------------------------------------------------------------------------
