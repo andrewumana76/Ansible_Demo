@@ -64,3 +64,25 @@
         cmd: systemctl mask --now ctrl-alt-del.target
 
 #---------------------------------------------------------------------------- 
+#V-257786 - RHEL 9 debug-shell systemd service must be disabled
+
+    - name: Disabled debug-shell.service
+      ansible.builtin.command:
+        cmd: systemctl disable --now debug-shell.service
+
+    - name: Mask debug-shell.service
+      ansible.builtin.command:
+        cmd: systemctl mask --now debug-shell.service
+
+#----------------------------------------------------------------------------
+#V-257787 - RHEL 9 must require a boot loader superuser password
+#This needs arguments to set and confirm password
+
+    - name: Set a grub bootloader password. 
+      ansible.builtin.expect:
+        command: grub2-setpassword
+        responses:
+          (?i)Enter password: "random_password"
+          (?i)Confirm password: "random_password" 
+
+#----------------------------------------------------------------------------
