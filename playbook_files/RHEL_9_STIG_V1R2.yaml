@@ -251,7 +251,7 @@
 
     - name: Run modprobe_modules.sh to harden atm
       shell: |
-        bash /root/modprobe_modules.sh atm
+        bash /root/modprobe_modules.sh atm false
 
 
 #--------------------------------------------------------------------------
@@ -259,7 +259,6 @@
 
     - name: Run modprobe_modules.sh to harden can
       shell: |
-        bash /root/modprobe_modules.sh can
-
+        bash /root/modprobe_modules.sh can false
 
 #---------------------------------------------------------------------------
