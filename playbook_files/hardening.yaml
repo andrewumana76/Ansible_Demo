@@ -115,8 +115,15 @@
 #---------------------------------------------------------------------------
 #V-257790 - RHEL 9 /boot/grub2/grub.cfg file must be group owned by root
 
-    - name: Set root as owner as grub.cfg
+    - name: Set root as group owner of grub.cfg
       ansible.builtin.command:
         cmd: chgrp root /boot/grub2/grub.cfg
+
+#---------------------------------------------------------------------------
+#V-257791 - RHEL 9 /boot/grub2/grub.cfg
+
+    - name: Set root as owner of grub.cfg
+      ansible.builtin.command:
+        cmd: chown root /boot/grub2/grub.cfg
 
 #---------------------------------------------------------------------------
