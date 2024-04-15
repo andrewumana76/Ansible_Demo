@@ -239,3 +239,19 @@
         sysctl --system
 
 #---------------------------------------------------------------------------
+#V-257804 - RHEL 9 Must be configured to disable the Asynchronous Transfer Mode kernel module
+
+    - name: Copy modprobe_modules script locally
+      copy:
+        src: ../source_files/modprobe_modules.sh
+        dest: /root
+        owner: root
+        group: root
+        mode: 0700
+
+    - name: Run modprobe_modules.sh to harden atm
+      shell: |
+        bash /root/modprobe_modules.sh atm
+
+
+#---------------------------------------------------------------------------
