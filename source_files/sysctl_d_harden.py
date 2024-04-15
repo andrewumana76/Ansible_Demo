@@ -2,9 +2,18 @@
 # Author : Andrew Umana
 
 import sys
+import os
 
 #read /etc/sysctl.d/99-sysctl.conf
-sysctl_99_file = open("/etc/sysctl.d/99-sysctl.conf", "r+")
+sysctl_path="/etc/sysctl.d/99-sysctl.conf"
+
+#creates the file if its not there
+if not os.path.exists(sysctl_path):
+    with open(sysctl_path, 'w') as sysctl_99_file:
+        sysctl_99_file.write("#99-sysctl.conf file" + '\n')
+        sysctl_99_file.close()
+
+sysctl_99_file = open(sysctl_path, "r+")
 
 #prime the first line for reading
 line = sysctl_99_file.readline()
