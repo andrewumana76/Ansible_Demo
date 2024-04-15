@@ -269,3 +269,17 @@
         bash /root/modprobe_modules.sh firewire-core true
 
 #---------------------------------------------------------------------------
+#V-257807 - RHEL 9 Must disable the SCTP Kernel module
+
+    - name: Run modprobe_modules.sh to harden sctp
+      shell: |
+        bash /root/modprobe_modules.sh sctp false
+
+#---------------------------------------------------------------------------
+#V-257808 - Rhel Must disable the TIPC kernel module
+
+    - name: Run modprobe_modules.sh to harden tipc
+      shell: |
+        bash /root/modprobe_modules.sh tipc false
+
+#---------------------------------------------------------------------------
