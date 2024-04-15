@@ -231,3 +231,11 @@
         sysctl --system
 
 #---------------------------------------------------------------------------
+#V-257803 - RHEL 9 Must disable the kernel.core_pattern
+
+    - name: Run sysctl_d_harden.py to add "kernel.core_pattern=|/bin/false"
+      shell: |
+        python /root/sysctl_d_harden.py kernel.core_pattern=\|/bin/false
+        sysctl --system
+
+#---------------------------------------------------------------------------
