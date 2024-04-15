@@ -53,3 +53,14 @@
         backrefs: yes
 
 #---------------------------------------------------------------------------- 
+#V-257785 - The x86 Ctrl-ALt-Delete key sequence must be disabled on RHEL 9
+
+    - name: Disabled ctrl-alt-delete.target
+      ansible.builtin.command:
+        cmd: systemctl disable --now ctrl-alt-del.target
+
+    - name: Mask ctrl-alt-delete.target
+      ansible.builtin.command:
+        cmd: systemctl mask --now ctrl-alt-del.target
+
+#---------------------------------------------------------------------------- 
