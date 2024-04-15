@@ -207,3 +207,11 @@
         sysctl --system
 
 #---------------------------------------------------------------------------
+#v-257800 - RHEL 9 Must restrict exposed kernel pointer addresses access
+
+    - name: Run sysctl_d_harden.py to add kernel.kptr_restrict=1
+      shell: |
+        python /root/sysctl_d_harden.py kernel.kptr_restrict=1
+        sysctl --system
+
+#---------------------------------------------------------------------------
