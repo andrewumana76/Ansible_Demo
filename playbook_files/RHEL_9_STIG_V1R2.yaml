@@ -199,3 +199,11 @@
         sysctl --system
 
 #---------------------------------------------------------------------------
+#V-257799 - RHEL 9 Must prevent the loading of a new kernel for later execution    
+
+    - name: Run sysctl_d_harden.py to add kernel.kexec_load_disabled=1
+      shell: |
+        python /root/sysctl_d_harden.py kernel.kexec_load_disabled=1
+        sysctl --system
+
+#---------------------------------------------------------------------------
