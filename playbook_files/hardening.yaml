@@ -135,10 +135,19 @@
         dest: /root
         owner: root
         group: root
-        mode: 0644
+        mode: 0700
 
     - name: Run grubby_harden.py to add vsyscall=none
       ansible.builtin.command: 
         cmd: python /root/grubby_harden.py vsyscall=none
 
 #---------------------------------------------------------------------------
+#V-257793 - RHEL 9 Must clear the page allocator to prevent use-after-free attacks
+
+    - name: Run grubby_harden.py to add page_poison=1
+      ansible.builtin.command: 
+        cmd: python /root/grubby_harden.py page_poison=1
+
+#---------------------------------------------------------------------------
+
+
