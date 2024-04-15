@@ -43,3 +43,13 @@
         systemctl start systemd-journald
 
 #---------------------------------------------------------------------------- 
+#V-257784 - THe systemd Ctrl-Alt-Delete brust key sequence in RHEL 9 must be disabled
+
+    - name: Disabled Ctrl-Alt-Delete
+      lineinfile:
+        path: /etc/systemd/system.conf
+        regexp: '^(.*)CtrlAltDelBurstAction(.*)$'
+        line: 'CtrlAltDelBurstAction=none(.*)$'
+        backrefs: yes
+
+#---------------------------------------------------------------------------- 
