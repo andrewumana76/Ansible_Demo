@@ -276,10 +276,18 @@
         bash /root/modprobe_modules.sh sctp false
 
 #---------------------------------------------------------------------------
-#V-257808 - Rhel Must disable the TIPC kernel module
+#V-257808 - RHEL Must disable the TIPC kernel module
 
     - name: Run modprobe_modules.sh to harden tipc
       shell: |
         bash /root/modprobe_modules.sh tipc false
+
+#---------------------------------------------------------------------------
+#V-257809 - RHEL 9 MUst implement ASLR to protect its memory from unauthorized code execution
+
+    - name: Run sysctl_d_harden.py to add "kernel.randomize_va_space=2"
+      shell: |
+        python /root/sysctl_d_harden.py kernel.randomize_va_space=2
+        sysctl --system
 
 #---------------------------------------------------------------------------
