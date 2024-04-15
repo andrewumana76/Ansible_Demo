@@ -159,3 +159,11 @@
         python /root/grubby_harden.py slub_debug=P
 
 #---------------------------------------------------------------------------
+#V-257795 - Verify RHEL 9 enables kernel page-table isolation
+    
+    - name: Run grubby_harden.py to add pti=on
+      shell: |
+        grubby --update-kernel=ALL --args="pti=on"
+        python /root/grubby_harden.py pti=on
+
+#---------------------------------------------------------------------------
