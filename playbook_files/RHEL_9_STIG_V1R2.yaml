@@ -223,3 +223,11 @@
         sysctl --system
 
 #---------------------------------------------------------------------------
+#V-257802 - RHEL 9 Must enable kernel parameters to enforce discretionary access control on symlinks
+
+    - name: Run sysctl_d_harden.py to add fs.protected_symlinks=1
+      shell: |
+        python /root/sysctl_d_harden.py fs.protected_symlinks=1
+        sysctl --system
+
+#---------------------------------------------------------------------------
