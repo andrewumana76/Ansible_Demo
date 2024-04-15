@@ -49,7 +49,7 @@
       lineinfile:
         path: /etc/systemd/system.conf
         regexp: '^(.*)CtrlAltDelBurstAction(.*)$'
-        line: 'CtrlAltDelBurstAction=none(.*)$'
+        line: 'CtrlAltDelBurstAction=none'
         backrefs: yes
 
 #---------------------------------------------------------------------------- 
