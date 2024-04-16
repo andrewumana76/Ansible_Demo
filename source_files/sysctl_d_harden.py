@@ -1,3 +1,6 @@
+# This document's goal is to implement kernel restrictions on the sysctl.d directory based on the RHEL9 STIG
+# Author : Andrew Umana
+
 import sys
 
 #read /etc/sysctl.d/99-sysctl.conf
