@@ -1,3 +1,6 @@
+# Authored by: Andrew Umana
+# This file is used to insert a string for grub kernel parameter hardening
+
 import sys
 
 #read /etc/default/grub
