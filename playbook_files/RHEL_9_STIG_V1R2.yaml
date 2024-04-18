@@ -2,7 +2,7 @@
   hosts: myhosts
   tasks:
 #---------------------------------------------------------------------------- 
-#V-257779
+#V-257779 - RHEL 9 Must display the Standard Mandatory DoD Notice
 #This is not a DoD system, only for example
 
     - name: RHEL9 must display DoD Notice
@@ -14,7 +14,8 @@
         mode: 0644
 
 #---------------------------------------------------------------------------- 
-#V-257781
+#V-257781 - The graphical display manager must not be the default target
+#This will remove GUI on reboot
 
     - name: Graphical display manager must not be the default target on RHEL9
       ansible.builtin.command: 
