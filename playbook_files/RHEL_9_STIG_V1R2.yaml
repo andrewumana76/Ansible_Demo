@@ -389,3 +389,35 @@
         bash /root/compare_ignore_space.sh "gpgcheck=1" "/etc/dnf/dnf.conf" /etc/dnf/dnf.conf
 
 #---------------------------------------------------------------------------
+#V-257821 - RHEL 9 Must check the GPG signature of locally installed software packages before installation
+
+    - name: Add localpkg_gpgcheck=1 to /etc/dnf/dnf.conf
+      shell: |
+        bash /root/compare_ignore_space.sh "localpkg_gpgcheck=1" "/etc/dnf/dnf.conf" /etc/dnf/dnf.conf
+
+#---------------------------------------------------------------------------
+#V-257822 - RHEL 9 Must have GPG signature verification enabled for all software repositories
+
+    - name: Find all repo files
+      find:
+        paths: "/etc/yum.repos.d/"
+        patterns: "*.repo"
+      register: repos    
+
+#    - name: Set all gpgchecks to 1
+#      lineinfile:
+#        path: "{{ item.path }}"
+#        regexp: '^(.*)gpgcheck(.*)$'
+#        line: 'gpgcheck=1'
+#        backrefs: yes
+#      with_items: "{{ repos.files }}"
+
+    - name: Set all gpgchecks to 1
+      replace:
+        path: "{{ item.path }}"
+        regexp: '^(.*)gpgcheck(.*)$'
+        replace: 'gpgcheck=1'
+          # backrefs: yes
+      with_items: "{{ repos.files }}"
+
+#---------------------------------------------------------------------------
