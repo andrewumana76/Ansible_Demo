@@ -7,7 +7,7 @@ https://youtu.be/ZZ0JYsY99_g
 
 Welcome to my GitHub page! 🚀 In the realm of Linux, cybersecurity plays a pivotal role in safeguarding our systems and data. It's an essential aspect that demands attention.
 
-Ansible is a powerful automation tool that simplifies complex tasks in Linux environments, including cybersecurity management. With Ansible, we can streamline security measures, ensuring consistent configurations and rapid responses to emerging threats. The use of Ansible reduces manual effort and minimizes the risk of human error. Ansible allows use to "code" STIG requirements into reusable playbooks, allowing cybersecurity teams enforce security policies consistently across multiple environments.
+Ansible is a powerful automation tool that simplifies complex tasks in Linux environments, including cybersecurity management. With Ansible, we can streamline security measures, ensuring consistent configurations and rapid responses to emerging threats. The use of Ansible reduces manual effort and minimizes the risk of human error. Ansible allows us to "code" STIG requirements into reusable playbooks, allowing cybersecurity teams enforce security policies consistently across multiple environments.
 
 This repository is dedicated to exploring RHEL9 Linux and cybersecurity STIGs, highlighting the effectiveness of Ansible in fortifying our infrastructure. 
 
