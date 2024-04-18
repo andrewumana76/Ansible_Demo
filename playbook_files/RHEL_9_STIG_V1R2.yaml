@@ -404,14 +404,6 @@
         patterns: "*.repo"
       register: repos    
 
-#    - name: Set all gpgchecks to 1
-#      lineinfile:
-#        path: "{{ item.path }}"
-#        regexp: '^(.*)gpgcheck(.*)$'
-#        line: 'gpgcheck=1'
-#        backrefs: yes
-#      with_items: "{{ repos.files }}"
-
     - name: Set all gpgchecks to 1
       replace:
         path: "{{ item.path }}"
