@@ -10,6 +10,9 @@ Ansible is a powerful automation tool that simplifies complex tasks in Linux env
 
 This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, highlighting the effectiveness of Ansible in fortifying our infrastructure. 
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 ## Directories
 
 **config_files**
@@ -23,6 +26,7 @@ This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, hi
 
 **source_files**
 - This directory holds any source files needed for the ansible automation such such bash or python scripts.
+
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
