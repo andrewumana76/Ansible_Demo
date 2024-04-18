@@ -343,4 +343,26 @@
         bash /root/compare_ignore_space.sh "* hardcore 0" "/etc/security/limits.conf" /etc/security/limits.d/*
 
 #---------------------------------------------------------------------------
+#V-257815 - RHEL 9 Must disable acquiring, saving, and processing core dumps
 
+    - name: Mask the systemd-coredump.sock
+      shell: |
+        systemctl mask --now systemd-coredump.socket
+        systemctl daemon-reload
+
+#---------------------------------------------------------------------------
+#V-257816 - RHEL 9 Must disable the use of user namespaces
+
+    - name: Run sysctl_d_harden.py to add "user.max_user_namespaces=0"
+      shell: |
+        python /root/sysctl_d_harden.py user.max_user_namespaces=0
+        sysctl --system
+
+#---------------------------------------------------------------------------
+#V-257817 - RHEL 9 must implement nonexecutable data to protect its memory from unauthorized code execution
+
+    - name: Enable NX protection
+      shell: |
+        grubby --update-kernel=ALL --remove-args=noexec
+
+#---------------------------------------------------------------------------
