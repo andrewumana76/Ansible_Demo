@@ -33,3 +33,7 @@ This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, hi
 ## Main Files
 
   **inventory.yaml**
+
+![alt text](https://github.com/andrewumana76/Ansible_Demo/blob/main/pictures/inventory_yaml.png)
+
+-Currently my environmnent only has one master node and one ansible node. The IP of the ansible node is show in the screenshot. This file is used by ansible to create ssh connections to the ansible node and run its modules.
