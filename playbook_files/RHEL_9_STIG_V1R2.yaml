@@ -318,3 +318,29 @@
         backrefs: yes
 
 #---------------------------------------------------------------------------
+#V-257813 - RHEL 9 Must disable storing core dumps
+
+    - name: Set Storage to none
+      lineinfile:
+        path: /etc/systemd/coredump.conf
+        regexp: '^(.*)Storage(.*)$'
+        line: 'Storage=none'
+        backrefs: yes
+
+#---------------------------------------------------------------------------
+#V-257814 - RHEL 9 Must disable core dumps for all users
+
+    - name: Copy compare_ignore_space locally
+      copy:
+        src: ../source_files/compare_ignore_space.sh
+        dest: /root
+        owner: root
+        group: root
+        mode: 0700
+
+    - name: Add * hardcore 0 to /etc/security/limits.conf
+      shell: |
+        bash /root/compare_ignore_space.sh "* hardcore 0" "/etc/security/limits.conf" /etc/security/limits.d/*
+
+#---------------------------------------------------------------------------
+
