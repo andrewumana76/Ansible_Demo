@@ -284,11 +284,19 @@
         bash /root/modprobe_modules.sh tipc false
 
 #---------------------------------------------------------------------------
-#V-257809 - RHEL 9 MUst implement ASLR to protect its memory from unauthorized code execution
+#V-257809 - RHEL 9 Must implement ASLR to protect its memory from unauthorized code execution
 
     - name: Run sysctl_d_harden.py to add "kernel.randomize_va_space=2"
       shell: |
         python /root/sysctl_d_harden.py kernel.randomize_va_space=2
+        sysctl --system
+
+#---------------------------------------------------------------------------
+#V-257810 - RHEL 9 Must disable access to network bpf system call from nonprivileged processes
+
+    - name: Run sysctl_d_harden.py to add "kernel.unprivileged_bpf_disabled=1"
+      shell: |
+        python /root/sysctl_d_harden.py kernel.unprivileged_bpf_disabled=1
         sysctl --system
 
 #---------------------------------------------------------------------------
