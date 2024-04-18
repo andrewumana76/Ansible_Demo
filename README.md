@@ -37,3 +37,12 @@ This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, hi
 ![alt text](https://github.com/andrewumana76/Ansible_Demo/blob/main/pictures/inventory_yaml.png)
 
 -Currently my environmnent only has one master node and one ansible node. The IP of the ansible node is show in the screenshot. This file is used by ansible to create ssh connections to the ansible node and run its modules.
+
+
+**RHEL9_V1R2.yaml**
+
+![alt text](https://github.com/andrewumana76/Ansible_Demo/blob/main/pictures/RHEL_9_STIG_yaml.png)
+
+-This is the most important file in the repository. This holds all the ansible plays for running the RHEL 9 STIGs. It consists of in-built commands of ansible or references to scripts or misc files in the sources directory. 
+
+You can view all the RHEL9 STIGs here: https://www.stigviewer.com/stig/red_hat_enterprise_linux_9/
