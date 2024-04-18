@@ -1,1 +1,2 @@
-You are [not] accessing a U.S Governement (USG) Information System (IS) that is provided for USG-authorized use only. This is just an example, not actually a USG system. 
+You are [not] accessing a U.S Government (USG) Information System (IS) that is provided for USG-authorized use only. 
+This is just an example, not actually a USG system. 
