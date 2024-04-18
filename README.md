@@ -39,6 +39,7 @@ This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, hi
 
 -Currently my environmnent only has one master node and one ansible node. The IP of the ansible node is show in the screenshot. This file is used by ansible to create ssh connections to the ansible node and run its modules.
 
+--------------------
 
 **RHEL9_V1R2.yaml**
 
