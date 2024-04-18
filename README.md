@@ -11,6 +11,8 @@ Ansible is a powerful automation tool that simplifies complex tasks in Linux env
 
 This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, highlighting the effectiveness of Ansible in fortifying our infrastructure. 
 
+This repository is receiving daily updates on STIG automation.
+
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
