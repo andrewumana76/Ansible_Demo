@@ -1,3 +1,8 @@
+#This code parses the /etc/default/grub file to look for GRUB_CMDLINE_LINUX
+#Once found, tt then adds the proper kernel parameter to the end of the GRUB_CMDLINE_LINUX line
+#The kernel parameter is a string thats passed as an argument, not defined within this file
+#Author : Andrew Umana
+
 import sys
 
 #read /etc/default/grub
