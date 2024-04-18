@@ -1,5 +1,7 @@
-# This document's goal is to implement kernel restrictions on the sysctl.d directory based on the RHEL9 STIG
-# Author : Andrew Umana
+#This document's goal is to implement kernel restrictions on the sysctl.d directory based on the RHEL9 STIG
+#Arguments are passed via the ansible module and fed into this python script
+#If the argument isn't present, its added to the /etc/sysctl.d/99-sysctl.conf file
+#Author : Andrew Umana
 
 import sys
 import os
