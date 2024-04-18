@@ -43,6 +43,6 @@ This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, hi
 
 ![alt text](https://github.com/andrewumana76/Ansible_Demo/blob/main/pictures/RHEL_9_STIG_yaml.png)
 
--This is the most important file in the repository. This holds all the ansible plays for running the RHEL 9 STIGs. It consists of in-built commands of ansible or references to scripts or misc files in the sources directory. 
+-This is the most important file in the repository. This holds all the ansible plays for running the RHEL 9 STIGs. It consists of built-in ansible modules/commands or references to scripts or misc files in the sources directory. 
 
 You can view all the RHEL9 STIGs here: https://www.stigviewer.com/stig/red_hat_enterprise_linux_9/
