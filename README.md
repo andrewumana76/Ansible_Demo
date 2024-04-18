@@ -13,7 +13,7 @@ This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, hi
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-## Directories
+## Main Directories
 
 **config_files**
 - This currently holds our default ansible config file
@@ -30,7 +30,7 @@ This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, hi
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-## Main Files
+## Important Files
 
   **inventory.yaml**
 
