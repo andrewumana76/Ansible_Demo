@@ -1,4 +1,5 @@
-**Please watch the following video for an initial introduction to this repository. I do an initial walk-through of the ansible automation on the Linux PCs :**
+<span style="color:blue">**Please watch the following video for an initial introduction to this repository. I do an initial walk-through of the ansible automation on the Linux PCs :**</span>.
+
 
 https://youtu.be/ZZ0JYsY99_g
 
