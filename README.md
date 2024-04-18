@@ -24,6 +24,6 @@ This repository is dedicated to exploring RHEL Linux and cybersecurity STIGs, hi
 **source_files**
 - This directory holds any source files needed for the ansible automation such such bash or python scripts.
 
-  ## Main Files
+## Main Files
 
   **inventory.yaml**
