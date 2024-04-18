@@ -366,3 +366,26 @@
         grubby --update-kernel=ALL --remove-args=noexec
 
 #---------------------------------------------------------------------------
+#V-257818 - The kdump service on RHEL 9 Must be disabled
+
+    - name: Disable kdump
+      shell: |
+        systemctl disable --now kdump
+        systemctl mask --now kdump
+
+#---------------------------------------------------------------------------
+#V-257819 - RHEL 9 must ensure cryptographic verification of vendor software packages
+
+    - name: Install RHEL package-signing keys
+      shell: |
+        cp /media/cdrom/RPG-GPG-KEY-redhat-release /etc/pki/rpm-gpg/
+        rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-redhat-release
+
+#---------------------------------------------------------------------------
+#V-257820 - RHEL 9 Must check the GPG signature of software packages originating from external software repos 
+
+    - name: Add gpgcheck=1 to /etc/dnf/dnf.conf
+      shell: |
+        bash /root/compare_ignore_space.sh "gpgcheck=1" "/etc/dnf/dnf.conf" /etc/dnf/dnf.conf
+
+#---------------------------------------------------------------------------
