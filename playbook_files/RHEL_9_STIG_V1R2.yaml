@@ -300,3 +300,11 @@
         sysctl --system
 
 #---------------------------------------------------------------------------
+#V-257811 - RHEL 9 must restrict usage of ptrace to descendant processes
+
+    - name: Run sysctl_d_harden.py to add "kernel.yama.ptrace_scope=1"
+      shell: |
+        python /root/sysctl_d_harden.py kernel.yama.ptrace_scope=1
+        sysctl --system
+
+#---------------------------------------------------------------------------
