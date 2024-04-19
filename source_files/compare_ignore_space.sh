@@ -4,9 +4,6 @@
 
 #!/bin/bash
 
-#Number of files the argument wants to parse
-Number_Files=$(($# - 1))
-
 #The First Argument is the actual text
 First_Arg="$1"
 shift
