@@ -25,7 +25,7 @@ This repository is receiving daily updates on STIG automation.
 - This holds the IP(s) of my ansible nodes. 
 
 **playbook_files**
-- This holds the main hardening playbook.
+- This holds the main hardening playbook. Also holds a playbook to set up the DNS client. 
 
 **source_files**
 - This directory holds any source files needed for the ansible automation such such bash or python scripts.
@@ -50,3 +50,9 @@ This repository is receiving daily updates on STIG automation.
 -This is the most important file in the repository. This holds all the ansible plays for running the RHEL 9 STIGs. It consists of built-in ansible modules/commands or references to scripts or misc files in the sources directory. 
 
 You can view all the RHEL9 STIGs here: https://www.stigviewer.com/stig/red_hat_enterprise_linux_9/
+
+--------------------
+
+**DNS_Client_Setup.yaml**
+
+![alt text](https://github.com/andrewumana76/Ansible_Demo/blob/main/pictures/DNS_Client_Setup.yaml.png)
