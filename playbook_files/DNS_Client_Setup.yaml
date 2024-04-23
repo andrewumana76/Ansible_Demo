@@ -1,0 +1,45 @@
+- name: DNS_Client_Setup
+  hosts: myhosts
+  tasks:
+   
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#Allow the DNS service on the public zone
+
+    - name: Allow the dns service through the firewall
+      ansible.posix.firewalld:      
+        zone: public
+        service: dns
+        permanent: true
+        state: enabled
+        
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#Move configured /etc/resolv.conf to the remote PC
+
+    - name: Overwrite the remote /etc/resolv.conf
+      copy: 
+        src: ../source_files/dns/shared/resolv.conf
+        dest: /etc/resolv.conf
+        owner: root
+        group: root
+        mode: 0644
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#Move configured /etc/NetworkManager/NetworkManager.conf to the remote PC
+
+    - name: Overwrite the remote /etc/NetworkManager.conf
+      copy: 
+        src: ../source_files/dns/shared/NetworkManager.conf
+        dest: /etc/NetworkManager/NetworkManager.conf
+        owner: root
+        group: root
+        mode: 0644
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
+#Reload the NetworkManager and Firewall service
+
+    - name: Reload NetworkManager
+      shell: |
+        systemctl reload NetworkManager
+        firewall-cmd --reload
+
+#--------------------------------------------------------------------------------------------------------------------------------------------
