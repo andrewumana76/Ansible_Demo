@@ -1,4 +1,9 @@
-myhosts:
+RHEL9_hosts:
   hosts:
-    ansible_node_01:
+    rhel_ansible_node_01:
       ansible_host: 192.168.1.208
+
+CentOS_7_hosts:
+  hosts:
+    cent_ansible_node_01:
+      ansible_host: 192.168.1.192

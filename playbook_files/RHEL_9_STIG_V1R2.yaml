@@ -1,5 +1,5 @@
 - name: RHEL9_STIG_V1R2
-  hosts: myhosts
+  hosts: RHEL9_hosts
   tasks:
 #---------------------------------------------------------------------------- 
 #V-257779 - RHEL 9 Must display the Standard Mandatory DoD Notice
