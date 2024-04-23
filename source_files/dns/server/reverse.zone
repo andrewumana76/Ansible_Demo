@@ -1,0 +1,10 @@
+$TTL		1D
+@		IN SOA masternode.ansibletest.demo. root.ansibletest.demo. (
+			2019022400  ; serial
+			3h	     ; refresh
+			15	     ; retry
+			1w 	     ; expire
+			3h	     ; minimum
+)
+		IN NS masternode.ansibletest.demo.
+58		IN PTR  masternode.ansibletest.demo
