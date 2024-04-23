@@ -55,4 +55,6 @@ You can view all the RHEL9 STIGs here: https://www.stigviewer.com/stig/red_hat_e
 
 **DNS_Client_Setup.yaml**
 
-![alt text](https://github.com/andrewumana76/Ansible_Demo/blob/main/pictures/DNS_Client_Setup.yaml.png)
+![alt text](https://github.com/andrewumana76/Ansible_Demo/blob/main/pictures/DNS_Client_Setup_yaml.png)
+
+-This file is used to setup the DNS files on a remote client. It adds the firewall dns exception, and overwrites the appropriate files.
