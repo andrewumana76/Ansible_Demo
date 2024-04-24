@@ -28,7 +28,7 @@ This repository is receiving daily updates on STIG automation.
 - This holds the main hardening playbook. Also holds a playbook to set up the DNS client. 
 
 **source_files**
-- This directory holds any source files needed for the ansible automation such such bash or python scripts.
+- This directory holds any source files needed for the ansible automation such as bash/python scripts and DNS/DHCP conf files.
 
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------
