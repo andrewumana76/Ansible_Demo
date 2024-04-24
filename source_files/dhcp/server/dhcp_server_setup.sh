@@ -3,6 +3,10 @@
 #Install DHCP server software
 dnf install dhcp-server -y
 
+#Firewall exceptions
+firewall-cmd --permanent --zone=public --add-service=dhcp
+firewall-cmd --reload
+
 #enable the DHCP server
 systemctl enable --now dhcp
 
