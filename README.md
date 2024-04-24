@@ -39,7 +39,7 @@ This repository is receiving daily updates on STIG automation.
 
 ![alt text](https://github.com/andrewumana76/Ansible_Demo/blob/main/pictures/inventory_yaml.png)
 
--Currently my environment only has one master node and one ansible node. The IP of the ansible node is show in the screenshot. This file is used by ansible to create ssh connections to the ansible node and run its modules.
+-Currently my environment only has one master node, one RHEL 9 ansible node, and one CentOS 7.9 ansible node. The IP of the ansible nodes are shown in the screenshot. This file is used by ansible to create ssh connections to the ansible node and run its modules.
 
 --------------------
 
