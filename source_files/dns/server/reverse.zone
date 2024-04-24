@@ -7,4 +7,6 @@ $TTL		1D
 			3h	     ; minimum
 )
 		IN NS masternode.ansibletest.demo.
-58		IN PTR  masternode.ansibletest.demo
+58		IN PTR masternode.ansibletest.demo.
+192             IN PTR centosnode.ansibletest.demo.
+208             IN PTR ansiblenode.ansibletest.demo.
