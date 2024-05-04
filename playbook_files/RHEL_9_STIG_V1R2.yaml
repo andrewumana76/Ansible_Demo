@@ -413,3 +413,126 @@
       with_items: "{{ repos.files }}"
 
 #---------------------------------------------------------------------------
+#V-257824 - RHEL 9 Must remove all software components after updated versions have been installed    
+
+    - name: Set clean_requirements_on_remove to 1
+      lineinfile:
+        path: /etc/dnf/dnf.conf
+        regexp: '^(.*)clean_requirements_on_remove(.*)$'
+        line: 'clean_requirements_on_remove=1'
+        backrefs: yes
+
+#--------------------------------------------------------------------------
+#v-257825 - RHEL 9 subscription-manager package must be installed
+
+    - name: Install subscription-manager
+      dnf:
+        name:
+          - subscription-manager
+        state: latest
+
+#--------------------------------------------------------------------------
+#V-257826 - RHEL 9 Must not have a FTP server package installed
+
+    - name: Remove vsftpd
+      ansible.builtin.dnf:
+        name: vsftpd
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257827 - RHEL 9 Must not have the sendmail package installed
+    
+    - name: Remove sendmail
+      ansible.builtin.dnf:
+        name: sendmail
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257828 - RHEL 9 MUst not have the nfs-utils package installed
+    
+    - name: Remove nfs-utils
+      ansible.builtin.dnf:
+        name: nfs-utils
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257829 - RHEL 9 Must not have the ypserv package installed
+    
+    - name: Remove ypserv
+      ansible.builtin.dnf:
+        name: ypserv
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-256830 - RHEL 9 Must not have the rsh-server package installed    
+    
+    - name: Remove rsh-server
+      ansible.builtin.dnf:
+        name: rsh-server
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257831 - RHEL 9 Must not have the telnet-server package installed
+    
+    - name: Remove telnet-server
+      ansible.builtin.dnf:
+        name: telnet-server
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257832 - RHEL 9 Must not have the gssproxy package installed    
+    
+    - name: Remove gssproxy
+      ansible.builtin.dnf:
+        name: gssproxy
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257833 - RHEL 9 Must not have the iprutils package installed
+    
+    - name: Remove iprutils
+      ansible.builtin.dnf:
+        name: iprutils
+        state: absent
+
+#--------------------------------------------------------------------------
+#v-257834 - RHEL 9 Must not have the tuned package installed
+    
+    - name: Remove tuned
+      ansible.builtin.dnf:
+        name: tuned
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257835 - RHEL 9 Must not have the TFTP server package installed
+
+    - name: Remove tftp
+      ansible.builtin.dnf:
+        name: tftp
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257836 - RHEL 9 Must not have the quagga package installed
+    
+    - name: Remove quagga
+      ansible.builtin.dnf:
+        name: quagga
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257837 - A graphical display manager must not be installed on RHEL 9 Unless approved
+    
+    - name: Remove xorg
+      ansible.builtin.dnf:
+        name: xorg
+        state: absent
+
+#--------------------------------------------------------------------------
+#V-257838 - RHEL 9 must have the openssl-pkcs11 package installed
+    
+    - name: Install openssl-pkcs11
+      dnf:
+        name: openssl-pkcs11
+        state: latest
+
+#--------------------------------------------------------------------------
